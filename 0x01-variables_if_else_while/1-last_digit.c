@@ -23,11 +23,11 @@ if (r > 5)
 	}
 else if (r == 0)
 	{
-	printf("last digit of %d is 0 and is 0\n", n);
+	printf("Last digit of %d is 0 and is 0\n", n);
 	}
 else
 	{
-	printf("last digit of %d is %d and is less than 6 and not 0\n", n, r);
+	printf("Last digit of %d is %d and is less than 6 and not 0\n", n, r);
 	}
 
 return (0);
