@@ -17,21 +17,14 @@ for (i = 0; i <= 9; ++i)
 		}
 		else
 		{
-			_putchar(',');
-			_putchar(' ');
-			if (result < 10)
-			{
-				_putchar(' ');
-			}
-			else
-			{
-				_putchar('0' + (result / 10));
-			}
+			_putchar('0' + (result / 10));
 			_putchar('0' + (result % 10));
 		}
 		if (j < 9)
 		{
-			_putchar(' ');
+			_putchar(',');
+			_putchar('.');
+			_putchar('.');
 		}
 		else
 		{
