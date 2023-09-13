@@ -17,6 +17,7 @@ for (i = 0; i <= 9; ++i)
 		}
 		else
 		{
+			_putchar(',');
 			_putchar(' ');
 			if (result < 10)
 			{
@@ -30,12 +31,11 @@ for (i = 0; i <= 9; ++i)
 		}
 		if (j < 9)
 		{
-			_putchar(',');
 			_putchar(' ');
 		}
 		else
 		{
-			_putchar('n');
+			_putchar('\n');
 		}
 	}
 }
