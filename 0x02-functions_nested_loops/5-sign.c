@@ -23,7 +23,5 @@ int print_sign(int n)
 		_putchar('-');
 		return (-1);
 	}
-	
-	return (0);/* Handle the case where none of the conditions are met */
-/* You can return 0 or any other appropriate default value */
+	return (0);
 }
