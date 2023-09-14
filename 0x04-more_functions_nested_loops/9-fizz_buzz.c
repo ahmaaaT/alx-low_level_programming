@@ -1,17 +1,6 @@
 #include <stdio.h>
 
 /**
- * print_space - Prints a space after the number or word, except for 100.
- *
- * @num: The current number.
- */
-void print_space(int num)
-{
-if (num != 100)
-	printf(" ");
-}
-
-/**
  * main - Prints numbers from 1 to 100 according to the FizzBuzz rules.
  *
  * Return: Always 0.
@@ -30,7 +19,8 @@ for (i = 1; i <= 100; i++)
 		printf("Buzz");
 	else
 		printf("%d ", i);
-	print_space(i);
+	if (i != 100)
+		printf(" ");
 }
 
 printf("\n");
