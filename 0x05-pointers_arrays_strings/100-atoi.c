@@ -10,24 +10,44 @@
  */
 int _atoi(char *s)
 {
-int sign = 1;/* Initialize the sign as positive*/
+int sign = 1;
 int result = 0;
 int i = 0;
-int num_started = 0;/* Flag to check if digits have started*/
+int overflow = 0;
+int digit;
 
-while (s[i] != '\0')
+while (s[i] == ' ')
 {
-	if (s[i] == '-')
-		sign *= -1;
-	else if (s[i] >= '0' && s[i] <= '9')
-	{
-		result = result * 10 + (s[i] - '0');
-		num_started = 1;
-	}
-	else if (num_started)
-		break;/* Stop at the first non-digit character after numbers have started*/
 	i++;
 }
 
+if (s[i] == '-')
+{
+	sign = -1;
+	i++;
+}
+else if (s[i] == '+')
+{
+	i++;
+}
+
+while (s[i] >= '0' && s[i] <= '9')
+{
+	digit = s[i] - '0';
+
+	if (result > (INT_MAX - digit) / 10)
+	{
+		overflow = 1;
+		break;
+	}
+
+	result = result * 10 + digit;
+	i++;
+}
+
+if (overflow)
+{
+	return ((sign == 1) ? INT_MAX : INT_MIN);
+}
 return (result * sign);
 }
