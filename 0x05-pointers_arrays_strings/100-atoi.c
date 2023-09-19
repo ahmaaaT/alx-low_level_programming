@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <limits.h>
 
 /**
@@ -16,16 +17,16 @@ int num_started = 0;/* Flag to check if digits have started*/
 
 while (s[i] != '\0')
 {
-if (s[i] == '-')
-	sign *= -1;
-else if (s[i] >= '0' && s[i] <= '9')
-{
-	result = result * 10 + (s[i] - '0');
-	num_started = 1;
-}
-else if (num_started)
-	break;/* Stop at the first non-digit character after numbers have started*/
-i++;
+	if (s[i] == '-')
+		sign *= -1;
+	else if (s[i] >= '0' && s[i] <= '9')
+	{
+		result = result * 10 + (s[i] - '0');
+		num_started = 1;
+	}
+	else if (num_started)
+		break;/* Stop at the first non-digit character after numbers have started*/
+	i++;
 }
 
 return (result * sign);
